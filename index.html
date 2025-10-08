@@ -1,433 +1,529 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <title>Portfólio de Softwares</title>
+
     <style>
+ 
+        /* :root {
+            --dark-bg: #2e3a47;       
+            --card-bg: #3a4758;       
+            --text-light: #e0e0e0;    
+            --text-lighter: #ffffff;  
+            --accent-color: #00838F;  
+        } */
+
+
         :root {
-            --dark-bg: linear-gradient(135deg, #2b2b2b 0%, #121212 100%);
-            --card-bg: #1e1e1e;
+            --dark-bg: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            --card-bg: #272f3a;
             --text-light: #e0e0e0;
-            --text-lighter: #ffffff;
+            /* --text-lighter: #ffffff; */
             --accent-color: #00838F;
-            --navbar-bg: rgba(0, 0, 0, 0.25);
+            --navbar-bg: rgba(31, 41, 55, 0.85);
+        }  
+
+
+        .sobre-conteudo {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            align-items: center; 
+            gap: 1rem; 
+            /* max-width: 800px;  */
+            /* margin: 0 auto;  */
+            padding: 0.5rem 0.5rem;
+        }
+
+        .col-esquerda {
+            display: flex;
+            justify-content: center; /* centraliza a imagem na coluna */
+        }
+
+        .avatar {
+            max-width: 130px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .col-direita p {
+            margin: 0.5rem 0;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        p {
+            line-height: 1.7;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            grid-template-areas: 
-                "navbar navbar"
-                "header sidebar"
-                "main sidebar"
-                "footer footer";
             background: var(--dark-bg);
             color: var(--text-light);
-            min-height: 100vh;
-        }
-
-        .navbar {
-            grid-area: navbar;
-            background: var(--navbar-bg);
-            padding: 1rem 2rem;
-            backdrop-filter: blur(5px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
             display: flex;
-            justify-content: flex-end;
-            gap: 1.5rem;
-        }
-
-        .navbar a {
-            color: var(--text-lighter);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .navbar a:hover {
-            color: var(--accent-color);
-            background: rgba(255, 255, 255, 0.05);
+            flex-direction: column;
+            min-height: 100vh;
+            scroll-behavior: smooth;
         }
 
         header {
-            grid-area: header;
-            padding: 4rem 2rem 3rem;
-            text-align: left;
-            margin: 1rem 1rem 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 4rem;
+            background: transparent; 
+            backdrop-filter: none;   
+        }
+
+        header img{
+            max-width: 130px;
+            margin-right: 2rem;
+            border-radius: 50%;
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.8rem;
-            color: var(--text-lighter);
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            color: var(--accent-color);
+            font-size: 2.2rem;
         }
 
         header p {
+            margin: 0.3rem 0 0;
             color: var(--text-light);
             opacity: 0.8;
             font-size: 1.1rem;
-            margin-top: 0.5rem;
+        }
+
+        .header-cta {
+            margin-left: auto;
+        }
+
+        ul li {
+            margin-bottom: 0.8rem; 
+        }
+
+        .cta-button {
+            min-width: 250px; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+
+        .cta-button:hover {
+            background: #00bcd4;
+            transform: translateY(-2px);
+        }
+
+        .descricao-empresa {
+            color: var(--text-light);
+            padding: 0.5rem 2rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .descricao-empresa h3 {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .descricao-empresa p {
+            max-width: 900px;
+            margin: 0 auto 0.8rem auto;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            opacity: 0.9;
         }
 
         main {
-            grid-area: main;
-            padding: 0 2rem 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: 1fr 3fr;
+            gap: 2.5rem;
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        aside {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.8rem;
+            color: var(--text-light);
+        }
+
+        aside h2, aside h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        section.cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
             gap: 1.5rem;
         }
 
         .card {
             background: var(--card-bg);
             border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             padding: 1.8rem;
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .card h2 {
-            margin-top: 0;
+        .card h3 {
             color: var(--accent-color);
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid #00838F;
-            font-size: 1.3rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
-        .card p {
-            color: var(--text-light);
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        aside {
-            grid-area: sidebar;
-            padding: 2rem 1.5rem 2rem 0;
-        }
-
-        .bio {
-            padding: 2rem;
-            position: sticky;
-            top: 6rem;
-        }
-
-        .bio h2 {
+        a {
             color: var(--accent-color);
-            margin-top: 0;
-            font-size: 1.4rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .bio img {
-            width: 100%;
-            max-width: 180px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem auto;
-            display: block;
-            border: 3px solid rgba(74, 144, 226, 0.3);
-        }
-
-        .bio p, .bio li {
-            color: var(--text-light);
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        .bio h3 {
-            color: var(--text-lighter);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .bio ul {
-            padding-left: 1.2rem;
-        }
-
-        .bio li {
-            margin-bottom: 0.3rem;
+        a:hover {
+            color: #00bcd4;
         }
 
         footer {
-            grid-area: footer;
-            background: rgba(0, 0, 0, 0.3);
-            color: var(--text-light);
+            border-top: 1px solid var(--accent-color);
+            color: var(--accent-color);
             text-align: center;
             padding: 1.8rem;
             margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.9rem;
         }
 
-        /* Menu Mobile */
-        .mobile-menu-button {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Responsividade */
-        @media (max-width: 1024px) {
-            body {
-                grid-template-columns: 1fr;
-                grid-template-areas: 
-                    "navbar"
-                    "header"
-                    "main"
-                    "sidebar"
-                    "footer";
-            }
-            
-            .navbar ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.8rem;
-            }
-            
-            header {
-                padding: 2rem 1rem 1.5rem;
-                margin: 0;
-                text-align: center;
-            }
-            
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            main {
-                padding: 0 1rem 1rem;
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
-            
-            aside {
-                padding: 0 1rem 2rem;
-            }
-            
-            .bio {
-                position: static;
-                margin-top: 1rem;
-                padding: 1.5rem;
-                text-align: center;
-            }
-            
-            .bio img {
-                max-width: 150px;
-            }
-            
-            .bio ul {
-                text-align: left;
-                padding-left: 1.5rem;
-            }
+        .calltoaction {
+            text-align: center;
+            padding: 2rem 1rem;
         }
 
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-            
-            header p {
-                font-size: 1rem;
-            }
-            
-            .navbar {
-                padding: 0.8rem 1rem;
-                position: relative;
-            }
-            
-            .navbar ul {
-                display: none;
+            header {
                 flex-direction: column;
-                width: 100%;
-                padding: 1rem 0;
+                align-items: flex-start;
             }
-            
-            .navbar ul.show {
-                display: flex;
-            }
-            
-            .mobile-menu-button {
-                display: block;
-                margin-left: auto;
-            }
-            
-            .card {
-                padding: 1.2rem;
-            }
-            
-            .card h2 {
-                font-size: 1.2rem;
-            }
-        }
 
-        @media (max-width: 480px) {
             main {
-                grid-template-columns: 1fr;
-            }
-            
-            header h1 {
-                font-size: 1.6rem;
-            }
-            
-            .bio {
+                display: block;
                 padding: 1rem;
             }
-            
-            .bio h2 {
-                font-size: 1.2rem;
-            }
-            
-            .bio h3 {
-                font-size: 1rem;
-            }
-            
-            footer {
-                padding: 1rem;
-                font-size: 0.8rem;
+
+            aside {
+                margin-bottom: 1.5rem;
             }
         }
     </style>
 </head>
-<body>
-    <nav class="navbar">
-        <button class="mobile-menu-button" onclick="toggleMenu()">☰</button>
-        <ul id="nav-menu">
-            <li>
-                <a href="mailto:contato@softwaresolutions.dev">
-                  <span class="material-icons">mail</span>
-                  Faça uma cotação
-                </a>
-              </li>            
-            <li><a href="#">Produtos</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Portfólio</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
 
+<body>
     <header>
-        <h1>Humaníssimo Robô</h1>
-        <p>Tecnologia a serviço de quem transforma o mundo</p>
+        <img src="https://avatars.githubusercontent.com/u/85522293?v=4" alt="Logotipo Humaníssimo Robô" />
+
+        <div class="header-text">
+            <h1 style="font-size: 2.7rem;">Humaníssimo Robô</h1>
+            <p>Tecnologia a serviço de quem transforma o mundo</p>
+        </div>
+
+        <div class="header-cta">
+            <button class="cta-button" id="scrollButton">
+                <span class="material-symbols-outlined" style="font-size: 20px;">mail</span>
+                Entre em contato
+            </button>
+        </div>
     </header>
 
+    <section class="descricao-empresa">
+        <div>
+            <h1>Desenvolvimento de Software e Gestão de Dados para o Terceiro Setor</h1>
+            <br>
+        </div>
+    </section>
+
     <main>
-        <div class="card">
-            <h2>SaaS 6.0</h2>
-            <p>Plataforma de software como serviço com arquitetura escalável, integração API e analytics em tempo real.</p>
-        </div>
+        
+        <aside>
+            <h2>Tecnologia e transformação</h2>
+                <p>
+                    A missão da <strong>Humaníssimo Robô</strong> é colocar a tecnologia a serviço da transformação social, ambiental e econômica,
+                    desenvolvendo soluções que possibilitem a pessoas e instituições atuarem com maior eficiência, transparência e de forma colaborativa.
+                </p>
+            <br>
 
-        <div class="card">
-            <h2>Batteryware Drag</h2>
-            <p>Algoritmos inteligentes que estendem em até 40% a vida útil da bateria em dispositivos móveis.</p>
-        </div>
+            <h2>Ferramentas de impacto</h2>
+            <p>
+                Soluções capazes de transformar a rotina de trabalho e o relacionamento com o público. A gestão inteligente das informações permite a tomada de decisões estratégicas baseadas em dados, ampliando seu potencial de atuação e impacto.
+            </p>
 
-        <div class="card">
-            <h2>Centre/Server Drag</h2>
-            <p>Solução unificada para monitoramento, provisionamento e segurança de data centers.</p>
-        </div>
+            <br>
+            <h2>Foco no Terceiro Setor</h2>
+            <p>Trabalhamos especialmente com organizações da sociedade civil que estão em processo de transição digital ou que desejam informatizar operações, como ONGs, fundações, associações, sindicatos e movimentos sociais.</p>
 
-        <div class="card">
-            <h2>Garantyservice</h2>
-            <p>Gestão automatizada de garantias com blockchain para verificação de autenticidade.</p>
-        </div>
 
-        <div class="card">
-            <h2>Enterprise Process</h2>
-            <p>Server 2.0.exe - Automação de workflows com machine learning para otimização contínua.</p>
-        </div>
+            
+            <br>
+            <h2>Desenvolvedor</h2>
 
-        <div class="card">
-            <h2>Debugging Router</h2>
-            <p>Windows 3.0.0.exe - Diagnóstico profundo de redes com visualização 3D de topologias.</p>
-        </div>
+            <section class="sobre-desenvolvedor">
+                <div class="sobre-conteudo">
+                    <div class="col-esquerda">
+                        <img class="avatar" src="images/avatar.jpeg" alt="Fotografia do desenvolvedor" />
+                    </div>
+                    <div class="col-direita">
+                        <p><strong>Renato Araujo</strong></p>
+                        <p>Analista de Dados com mais de 20 anos de experiência no campo socioambiental</p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="card">
-            <h2>Networked Networks</h2>
-            <p>Plataforma IoT com edge computing e análise preditiva para milhões de dispositivos.</p>
-        </div>
 
-        <div class="card">
-            <h2>Gateway Hiring</h2>
-            <p>Acesso remoto seguro com autenticação biométrica e criptografia quântica.</p>
-        </div>
+            <h3>Formação</h3>
+            <ul>
+                <li>Pós-graduação em Ciência de Dados</li>
+                <li>Graduação em Engenharia Florestal</li>
+                <li>Tecnólogo em Análise e Desenvolvimento de Sistemas</li>
+                <li>Certificado Google "Data Analytics"</li>
+            </ul>
 
-        <div class="card">
-            <h2>Gateway Trust</h2>
-            <p>Framework zero-trust com verificação contínua de identidade e dispositivos.</p>
-        </div>
+            <br>
 
-        <div class="card">
-            <h2>Gateway Drive</h2>
-            <p>Armazenamento distribuído com sincronização automática e versionamento inteligente.</p>
-        </div>
+            <!-- <h2>Colaboramos com</h2>
+                <ul>
+                    <li>Instituto, Sociedade, População e Natureza</li>
+                    <li>Fundo Ecos</li>
+                    <li>MovimentoInterestadual das Quebradeiras de Coco Babaçu</li>
+                    <li>União das Escolas Família Agrícola do Maranhão</li>
+                    <li>Observatório da Sociobiodiversidade</li>
+                </ul> -->
+            
+
+
+        </aside>
+
+        <section>
+            <h2 style="color: var(--accent-color); margin-bottom: 2rem;">Serviços</h2>
+
+
+            <section class="cards">
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">code</span>
+                        Desenvolvimento de Software
+                    </h3>
+                    <p>Desenvolvemos soluções personalizadas para ONGs e associações, facilitando a gestão de projetos, voluntariado e comunicação com a comunidade, com foco em eficiência e impacto social.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">database</span>
+                        Gestão de Dados
+                    </h3>
+                    <p>Implementamos sistemas inteligentes para coleta, organização e análise de dados, ajudando entidades do terceiro setor a tomar decisões estratégicas fundamentadas e otimizar recursos.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">volunteer_activism</span>
+                        Ferramentas para filantropia
+                    </h3>
+                    <p>Automatizamos processos de captação, distribuição e prestação de contas de recursos filantrópicos, garantindo transparência e facilitando a manutenção de relacionamentos com doadores e parceiros.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">emoji_food_beverage</span>
+                        Gestão administrativa
+                    </h3>
+                    <p>Oferecemos sistemas integrados para controle financeiro, gestão de membros e organização interna, especialmente desenvolvidos para as necessidades específicas de ONGs e associações locais.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">network_node</span>
+                        Rastreabilidade com blockchain
+                    </h3>
+                    <p>Utilizamos tecnologia blockchain para garantir a transparência e autenticidade de cadeias produtivas, ideal para empreendimentos que precisam comprovar a origem dos produtos e oferecer ferramentas de rastreabilidade.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">dashboard</span>
+                        Dashboards gerenciais
+                    </h3>
+                    <p>Criamos dashboards interativos e personalizados que permitem visualizar métricas e indicadores de desempenho em tempo real, auxiliando organizações a tomar decisões estratégicas mais rápidas e precisas.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">chart_data</span>
+                        Sistematização e Análise de Dados
+                    </h3>
+                    <p>Organizamos e estruturamos dados complexos, transformando informações brutas em insights valiosos para planejamento, monitoramento e avaliação de projetos sociais e institucionais.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">rss_feed</span>
+                        Clipping de Notícias
+                    </h3>
+                    <p>Fornecemos um serviço personalizado de clipping, coletando e organizando notícias relevantes para sua organização, permitindo acompanhar tendências, identificar oportunidades e manter-se atualizado sobre assuntos estratégicos.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">gavel</span>
+                        Monitoramento Legislativo
+                    </h3>
+                    <p>Acompanhamos projetos de lei e proposições legislativas que possam impactar sua atuação, fornecendo análises e alertas em tempo real para que sua organização possa se planejar e atuar de forma informada e estratégica.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">map</span>
+                        Criação de Mapas
+                    </h3>
+                    <p>Desenvolvemos mapas temáticos e interativos que auxiliam na visualização geográfica de dados socioambientais, facilitando a análise e o planejamento de projetos territoriais e comunitários.</p>
+                </div>
+
+                <div class="card">
+                    <h3>
+                        <span class="material-symbols-outlined" style="vertical-align: bottom;">description</span>
+                        Elaboração de projetos
+                    </h3>
+                    <p>Apoio na elaboração de projetos na área de tecnologia, auxiliando organizações na captação de recursos em editais e programas de financiamento.</p>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <section class="cards">
+                <div class="card">
+                    
+                    <h3>
+                        <span class="material-icons" style="vertical-align: bottom;">code</span>
+                        Desenvolvimento de Software
+                    </h3>
+
+
+
+                    <p>Desenvolvemos soluções personalizadas para ONGs e associações, facilitando a gestão de projetos, voluntariado e comunicação com a comunidade, com foco em eficiência e impacto social.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Gestão de Dados</h3>
+                    <p>Implementamos sistemas inteligentes para coleta, organização e análise de dados, ajudando entidades do terceiro setor a tomar decisões estratégicas fundamentadas e otimizar recursos.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Ferramentas para gestão de filantropia</h3>
+                    <p>Automatizamos processos de captação, distribuição e prestação de contas de recursos filantrópicos, garantindo transparência e facilitando a manutenção de relacionamentos com doadores e parceiros.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Ferramentas para gestão administrativa</h3>
+                    <p>Oferecemos sistemas integrados para controle financeiro, gestão de membros e organização interna, especialmente desenvolvidos para as necessidades específicas de ONGs e associações locais.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Rastreabilidade com blockchain</h3>
+                    <p>Utilizamos tecnologia blockchain para garantir a transparência e autenticidade de cadeias produtivas, ideal para empreendimentos que precisam comprovar a origem dos produtos e oferecer ferramentas de rastreabilidade.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Dashboards gerenciais</h3>
+                    <p>Criamos dashboards interativos e personalizados que permitem visualizar métricas e indicadores de desempenho em tempo real, auxiliando organizações a tomar decisões estratégicas mais rápidas e precisas.</p>
+                </div>
+
+
+                <div class="card">
+                    <h3>Sistematização e Análise de Dados</h3>
+                    <p>Organizamos e estruturamos dados complexos, transformando informações brutas em insights valiosos para planejamento, monitoramento e avaliação de projetos sociais e institucionais.</p>
+                </div>
+
+
+                <div class="card">
+                    <h3>Clipping de Notícias</h3>
+                    <p>Fornecemos um serviço personalizado de clipping, coletando e organizando notícias relevantes para sua organização, permitindo acompanhar tendências, identificar oportunidades e manter-se atualizado sobre assuntos estratégicos.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Monitoramento Legislativo</h3>
+                    <p>Acompanhamos projetos de lei e proposições legislativas que possam impactar sua atuação, fornecendo análises e alertas em tempo real para que sua organização possa se planejar e atuar de forma informada e estratégica.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Criação de Mapas</h3>
+                    <p>Criação de mapas.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Elaboração de projetos</h3>
+                    <p>Apoio na elaboração de projetos na área de tecnologia, auxiliando organizações na captação de recursos em editais e programas de financiamento.</p>
+                </div>
+
+            </section> -->
+        </section>
     </main>
 
-    <aside>
-        <div class="bio">
-            <img src="https://avatars.githubusercontent.com/u/85522293?v=4" alt="Logotipo Humaníssimo Robô">
-            <h2>Sobre o Desenvolvedor</h2>
-            <p>Arquiteto de soluções com 12+ anos de experiência em sistemas críticos. Especialista em segurança cibernética e computação distribuída.</p>
-            
-            <h3>Expertise Técnica:</h3>
-            <ul>
-                <li>Arquitetura de Microsserviços</li>
-                <li>Criptografia Avançada</li>
-                <li>Edge Computing</li>
-                <li>Machine Learning Ops</li>
-                <li>Infraestrutura como Código</li>
-            </ul>
-            
-            <h3>Certificações:</h3>
-            <ul>
-                <li>AWS Certified Solutions Architect</li>
-                <li>Certified Ethical Hacker</li>
-                <li>Google Cloud Professional</li>
-            </ul>
-            
-            <h3>Contato:</h3>
-            <p>contato@softwaresolutions.dev<br>
-            +55 (11) 98765-4321</p>
-        </div>
-    </aside>
+    <br>
+    <br>
 
-    <footer>
-        <p>&copy; 2025 Software Solutions. Todos os direitos reservados. | Desenvolvido com ♡ por nossa equipe</p>
+
+    <section class="calltoaction">
+        <h2 style="display: inline-flex; align-items: center; gap: 10px; color: #ffffff; justify-content: center; font-weight: 700; font-size: 1.8rem; margin: 10px 0;">
+            <span class="material-symbols-outlined" style="font-size: 32px;">mail</span>Entre em contato
+        </h2>
+
+        <p style="color: #e0e0e0; font-size: 1.5rem; margin-top: 0.5rem;">
+            
+            <a href="mailto:renato.eco@gmail.com" style="color: #00838F; text-decoration: underline;">
+                renato.eco@gmail.com
+            </a>
+        </p>
+    </section>
+
+    <footer id="footer">
+        <p><b>Humaníssimo Robô</b> é uma marca da empresa Sociobiodiversa Estratégias e Serviços em Sustentabilidade</p>
+        <p>CNPJ 18.465.465/0001-83</p>
     </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.toggle('show');
-        }
-
-        // Fechar menu quando um item for clicado (em telas pequenas)
-        document.querySelectorAll('.navbar a').forEach(item => {
-            item.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    document.getElementById('nav-menu').classList.remove('show');
-                }
-            });
+        // Faz o botão rolar suavemente até o footer
+        document.getElementById('scrollButton').addEventListener('click', () => {
+            document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>
