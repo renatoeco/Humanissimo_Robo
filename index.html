@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
     <title>Humaníssimo Robô</title>
+    <link rel="icon" href="images/logo_human_robo.png" type="image/jpeg">
+
 
     <style>
- 
-        /* :root {
+      /* :root {
             --dark-bg: #2e3a47;       
             --card-bg: #3a4758;       
             --text-light: #e0e0e0;    
@@ -17,511 +24,595 @@
             --accent-color: #00838F;  
         } */
 
+      :root {
+        --dark-bg: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        --card-bg: #272f3a;
+        --text-light: #e0e0e0;
+        /* --text-lighter: #ffffff; */
+        --accent-color: #00838f;
+        --navbar-bg: rgba(31, 41, 55, 0.85);
+      }
 
-        :root {
-            --dark-bg: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            --card-bg: #272f3a;
-            --text-light: #e0e0e0;
-            /* --text-lighter: #ffffff; */
-            --accent-color: #00838F;
-            --navbar-bg: rgba(31, 41, 55, 0.85);
-        }  
-
-        /* .dotted-underline {
-        text-decoration-line: underline;
-        text-decoration-style: dashed;
-        text-underline-offset: 8px;
-
-        } */
-
-        /* mark {
-        background-color: var(--accent-color);
-        color: #e0e0e0;
-        padding: 0 0.2em;
-        border-radius: 3px;
-        } */
-
-        .destaque {
+      .destaque {
         font-size: 1.2em;
         font-weight: 600;
-        }
+      }
 
+      .sobre-conteudo {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+        gap: 1rem;
+        /* max-width: 800px;  */
+        /* margin: 0 auto;  */
+        padding: 0.5rem 0.5rem;
+      }
 
+      .col-esquerda {
+        display: flex;
+        justify-content: center;
+      }
 
+      .avatar {
+        max-width: 130px;
+        border-radius: 50%;
+        display: block;
+      }
 
+      .col-direita p {
+        margin: 0.5rem 0;
+        color: var(--text-light);
+        line-height: 1.6;
+      }
 
-        .sobre-conteudo {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            align-items: center; 
-            gap: 1rem; 
-            /* max-width: 800px;  */
-            /* margin: 0 auto;  */
-            padding: 0.5rem 0.5rem;
-        }
+      p {
+        line-height: 1.7;
+      }
 
-        .col-esquerda {
-            display: flex;
-            justify-content: center; /* centraliza a imagem na coluna */
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: var(--dark-bg);
+        color: var(--text-light);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        scroll-behavior: smooth;
+      }
 
-        .avatar {
-            max-width: 130px;
-            border-radius: 50%;
-            display: block;
-        }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3rem 4rem;
+        background: transparent;
+        backdrop-filter: none;
+      }
 
-        .col-direita p {
-            margin: 0.5rem 0;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
+      header img {
+        max-width: 130px;
+        margin-right: 2rem;
+        border-radius: 50%;
+      }
 
-        p {
-            line-height: 1.7;
-        }
+      .header-text {
+        display: flex;
+        flex-direction: column;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: var(--dark-bg);
-            color: var(--text-light);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            scroll-behavior: smooth;
-        }
+      header h1 {
+        margin: 0;
+        color: var(--accent-color);
+        font-size: 2.2rem;
+      }
 
+      header p {
+        margin: 0.3rem 0 0;
+        color: var(--text-light);
+        opacity: 0.8;
+        font-size: 1.1rem;
+      }
+
+      .header-cta {
+        margin-left: auto;
+      }
+
+      ul li {
+        margin-bottom: 0.8rem;
+        line-height: 1.4;
+      }
+
+      .cta-button {
+        min-width: 250px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--accent-color);
+        color: #fff;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .cta-button:hover {
+        background: #00bcd4;
+        transform: translateY(-2px);
+      }
+
+      .descricao-empresa {
+        color: var(--text-light);
+        padding: 0.5rem 2rem 2rem 2rem;
+        text-align: center;
+      }
+
+      .descricao-empresa h3 {
+        color: var(--text-light);
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .descricao-empresa p {
+        max-width: 900px;
+        margin: 0 auto 0.8rem auto;
+        line-height: 1.7;
+        font-size: 1.05rem;
+        opacity: 0.9;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 2.5rem;
+        padding: 2rem;
+        flex-grow: 1;
+      }
+
+      aside {
+        background: var(--card-bg);
+        border-radius: 10px;
+        padding: 1.8rem;
+        color: var(--text-light);
+      }
+
+      aside h2,
+      aside h3 {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+      }
+
+      section.cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        padding: 1.8rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .card h3 {
+        color: var(--accent-color);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #00bcd4;
+      }
+
+      footer {
+        border-top: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        text-align: center;
+        padding: 1.8rem;
+        margin-top: 2rem;
+      }
+
+      .calltoaction {
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      @media (max-width: 768px) {
         header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 3rem 4rem;
-            background: transparent; 
-            backdrop-filter: none;   
-        }
-
-        header img{
-            max-width: 130px;
-            margin-right: 2rem;
-            border-radius: 50%;
-        }
-
-        .header-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        header h1 {
-            margin: 0;
-            color: var(--accent-color);
-            font-size: 2.2rem;
-        }
-
-        header p {
-            margin: 0.3rem 0 0;
-            color: var(--text-light);
-            opacity: 0.8;
-            font-size: 1.1rem;
-        }
-
-        .header-cta {
-            margin-left: auto;
-        }
-
-        ul li {
-            margin-bottom: 0.8rem; 
-        }
-
-        .cta-button {
-            min-width: 250px; 
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: var(--accent-color);
-            color: #fff;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.2s ease;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-        }
-
-
-        .cta-button:hover {
-            background: #00bcd4;
-            transform: translateY(-2px);
-        }
-
-        .descricao-empresa {
-            color: var(--text-light);
-            padding: 0.5rem 2rem 2rem 2rem;
-            text-align: center;
-        }
-
-        .descricao-empresa h3 {
-            color: var(--text-light);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .descricao-empresa p {
-            max-width: 900px;
-            margin: 0 auto 0.8rem auto;
-            line-height: 1.7;
-            font-size: 1.05rem;
-            opacity: 0.9;
+          flex-direction: column;
+          align-items: flex-start;
         }
 
         main {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            gap: 2.5rem;
-            padding: 2rem;
-            flex-grow: 1;
+          display: block;
+          padding: 1rem;
         }
 
         aside {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 1.8rem;
-            color: var(--text-light);
+          margin-bottom: 1.5rem;
         }
 
-        aside h2, aside h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
+        .cta-button {
+          display: none;
         }
-
-        section.cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 1.8rem;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .card h3 {
-            color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #00bcd4;
-        }
-
-        footer {
-            border-top: 1px solid var(--accent-color);
-            color: var(--accent-color);
-            text-align: center;
-            padding: 1.8rem;
-            margin-top: 2rem;
-        }
-
-        .calltoaction {
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            main {
-                display: block;
-                padding: 1rem;
-            }
-
-            aside {
-                margin-bottom: 1.5rem;
-            }
-
-            .cta-button {
-                display: none;
-            }
-   
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <img src="https://avatars.githubusercontent.com/u/85522293?v=4" alt="Logotipo Humaníssimo Robô" />
+      <img
+        src="images/logo_human_robo.png"
+        alt="Logotipo Humaníssimo Robô"
+      />
 
-        <div class="header-text">
-            <h1 style="font-size: 2.7rem;">Humaníssimo Robô</h1>
-            <p>Tecnologia a serviço de quem transforma o mundo</p>
-        </div>
+      <div class="header-text">
+        <h1 style="font-size: 2.7rem">Humaníssimo Robô</h1>
+        <p>Tecnologia a serviço de quem transforma o mundo</p>
+      </div>
 
-        <div class="header-cta">
-            <button class="cta-button" id="scrollButton">
-                <span class="material-symbols-outlined" style="font-size: 20px;">mail</span>
-                Entre em contato
-            </button>
-        </div>
+      <div class="header-cta">
+        <button class="cta-button" id="scrollButton">
+          <span class="material-symbols-outlined" style="font-size: 20px"
+            >mail</span
+          >
+          Entre em contato
+        </button>
+      </div>
     </header>
 
     <section class="descricao-empresa">
-        <div>
-            <!-- <h1>
-            <span class="dotted-underline">Desenvolvimento de Software</span> e 
-            <span class="dotted-underline">Gestão de Dados</span> para o 
-            <span class="dotted-underline">Terceiro Setor</span>
-            </h1> -->
+      <div>
+        <h2>
+          <span class="destaque">Desenvolvimento de Software</span> e
+          <span class="destaque">Gestão de Dados</span> para o
+          <span class="destaque">Terceiro Setor</span>
+        </h2>
 
-            <!-- <h1>Desenvolvimento de Software e Gestão de Dados para o Terceiro Setor</h1> -->
-
-
-            <h2>
-            <span class="destaque">Desenvolvimento de Software</span> e 
-            <span class="destaque">Gestão de Dados</span> para o 
-            <span class="destaque">Terceiro Setor</span>
-            </h2>
-
-
-
-
-
-            <!-- <h1>
-            <span>DESENVOLVIMENTO DE SOFTWARE</span> e 
-            <span>GESTÃO DE DADOS</span> para o 
-            <span>TERCEIRO SETOR</span>
-            </h1> -->
-
-
-<!-- 
-            <h1>
-            <mark>Desenvolvimento de Software</mark> e
-            <mark>Gestão de Dados</mark> para o
-            <mark>Terceiro Setor</mark>
-            </h1> -->
-
-
-
-            <br>
-        </div>
+        <br />
+      </div>
     </section>
 
     <main>
-        
-        <aside>
-            <h2>Tecnologia e transformação</h2>
-                <p>
-                    A missão da <strong>Humaníssimo Robô</strong> é colocar a tecnologia a serviço da transformação social, ambiental e econômica,
-                    desenvolvendo soluções que possibilitem a pessoas e instituições atuarem com maior eficiência, transparência e de forma colaborativa.
-                </p>
-            <br>
+      <aside>
+        <h2>Tecnologia e transformação</h2>
+        <p>
+          A missão da <strong>Humaníssimo Robô</strong> é colocar a tecnologia a
+          serviço da transformação social, ambiental e econômica, desenvolvendo
+          soluções que possibilitem a pessoas e instituições atuarem com maior
+          eficiência, transparência e de forma colaborativa.
+        </p>
+        <br />
 
-            <h2>Ferramentas de impacto</h2>
-            <p>
-                Soluções capazes de transformar a rotina de trabalho e o relacionamento com o público. A gestão inteligente das informações permite a tomada de decisões estratégicas baseadas em dados, ampliando seu potencial de atuação e impacto.
-            </p>
+        <h2>Ferramentas de impacto</h2>
+        <p>
+          Tecnologia feita para impulsionar causas e fortalecer propósitos.
+          Infraestruturas digitais que fortalecem o impacto das organizações,
+          ampliando o alcance, a eficiência, a transparência e a capacidade de
+          mensurar resultados.
+        </p>
 
-            <br>
-            <h2>Foco no Terceiro Setor</h2>
-            <p>Trabalhamos especialmente com organizações da sociedade civil que estão em processo de transição digital ou que desejam informatizar operações, como ONGs, fundações, associações, sindicatos e movimentos sociais.</p>
+        <br />
+        <h2>Foco no Terceiro Setor</h2>
+        <p>
+          Trabalho voltado ao assessoramento de organizações da sociedade civil
+          que estão em processo de transição digital ou que desejam informatizar
+          operações, como ONGs, fundações, associações, sindicatos e movimentos
+          sociais.
+        </p>
 
+        <br />
+        <h2>Desenvolvedor</h2>
 
-            
-            <br>
-            <h2>Desenvolvedor</h2>
-
-            <section class="sobre-desenvolvedor">
-                <div class="sobre-conteudo">
-                    <div class="col-esquerda">
-                        <img class="avatar" src="images/avatar.jpeg" alt="Fotografia do desenvolvedor" />
-                    </div>
-                    <div class="col-direita">
-                        <p><strong>Renato Araujo</strong></p>
-                        <p>Analista de Dados com mais de 20 anos de experiência no campo socioambiental</p>
-                    </div>
-                </div>
-            </section>
-
-
-            <h3>Formação</h3>
-            <ul>
-                <li>Pós-graduação em Ciência de Dados</li>
-                <li>Graduação em Engenharia Florestal</li>
-                <li>Tecnólogo em Análise e Desenvolvimento de Sistemas</li>
-                <li>Certificado Google "Data Analytics"</li>
-            </ul>
-
-            <br>
-            
-
-
-        </aside>
-
-        <section>
-            <!-- <h2 style="color: var(--accent-color); margin-bottom: 2rem;">Serviços</h2> -->
-
-
-            <section class="cards">
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">code</span>
-                        Desenvolvimento de Software
-                    </h3>
-                    <p>Soluções personalizadas para a gestão de projetos, processos administrativos, metodologias de monitoramento, intranet institucional, gestão de ativos digitais, entre outros. Aplicações feitas sob medida rodando localmente ou na nuvem.</p>
-                </div>
-
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">database</span>
-                        Gestão de Dados
-                    </h3>
-                    <p>Sistemas inteligentes para governança de dados: coleta, organização, armazenamento, análise, visualização, segurança e privacidade. Seus dados institicionais armazenados em infraestrutura segura e permanente, apoiando o monitoramento e a tomada de decisões.</p>
-                </div>
-
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">volunteer_activism</span>
-                        Ferramentas para filantropia
-                    </h3>
-                    <p>Sistemas de automação para fundos de filantropia. Plataformas para o processo seletivo (recepção de propostas, avaliações, sistematização) e para a gestão dos projetos aprovados (acompanhamento técnico/financeiro, relatórios e prestação de contas).</p>
-                </div>
-
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">emoji_food_beverage</span>
-                        Gestão administrativa
-                    </h3>
-                    <p>Sistemas internos integrados para controle financeiro, gestão de RH, solicitações de viagem, relatórios, prestação de contas e automação de geração de documentos personalizados (contratos, recibos). Deixe as tarefas repetitivas com o Robô e ganhe eficiência no seu ADM.</p>
-                </div>
-
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">dashboard</span>
-                        Painéis gerenciais
-                    </h3>
-                    <p>Visualização em tempo real de dados estratégicos por meio de dashboards personalizados e interativos. Consulte métricas, indicadores, execução financeira, cronograma de contratos, e obtenha insights valiosos para a tomada de decisão.</p>
-                </div>
-
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">network_node</span>
-                        Rastreabilidade com blockchain
-                    </h3>
-                    <p>Acompanhe cada etapa da cadeia produtiva com a confiabilidade do blockchain. Apps para registro do trânsito e para consulta das informações registradas. Ideal para empreendimentos que desejam comprovar a origem dos produtos e oferecer ferramentas de rastreabilidade.</p>
-                </div>
-
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">chart_data</span>
-                        Sistematização e Análise de Dados
-                    </h3>
-                    <p>Organização e estruturação de dados complexos, automação de análise/relatórios padronizados, tabulação de pesquisas, bancos de dados, monitoramento de indicadores e visualização de dados em gráficos e mapas. Transforme os dados em informações valiosas para sua organização.</p>
-                </div>
-
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">rss_feed</span>
-                        Clipping de Notícias
-                    </h3>
-                    <p>Plataforma online para reunir em um só lugar as menções e matérias na mídia sobre os temas de interesse da organização. Ferramenta de triagem, painel para consulta com filtros e gráficos. Acompanhe tendências, oportunidades e a repercussão de suas atividades na mídia.</p>
-                </div>
-
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">gavel</span>
-                        Monitoramento Legislativo
-                    </h3>
-                    <p>Entregue diariamente para sua equipe de advocacy as atualizações legislativas de matérias de interesse na Câmara e no Senado. Cadastre os PLs que deseja acompanhar, e pronto. As movimentações chegarão todos os dias por e-mail.</p>
-                </div>
-
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">map</span>
-                        Criação de Mapas
-                    </h3>
-                    <p>Elaboração de mapas temáticos estáticos ou interativos. Visualização de áreas de atuação, distribuição de carteiras de projetos, peças para relatórios, antes / depois, linhas temporais, etc. </p>
-                </div>
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">description</span>
-                        Elaboração de projetos
-                    </h3>
-                    <p>Apoio na elaboração de projetos na área de tecnologia, auxiliando organizações na captação de recursos em editais e programas de financiamento voltados pra essa temática.</p>
-                </div>
-
-                <div class="card">
-                    <h3>
-                        <span class="material-symbols-outlined" style="vertical-align: bottom;">description</span>
-                        Gestão de ativos digitais
-                    </h3>
-                    <p>Gestão eficiente de coleção de mídia (fotos, vídeos e documentos) com armazenamento em banco de dados, classificação com tags e busca avançada. Serviços de instalação, treinamento, assessoria, monitoramento de carga e backup.</p>
-                </div>
-
-
-
-            </section>
-
-
+        <section class="sobre-desenvolvedor">
+          <div class="sobre-conteudo">
+            <div class="col-esquerda">
+              <img
+                class="avatar"
+                src="images/avatar.jpeg"
+                alt="Fotografia do desenvolvedor"
+              />
+            </div>
+            <div class="col-direita">
+              <p><strong>Renato Araujo</strong></p>
+              <p>
+                Analista de Dados com mais de 20 anos de experiência no campo
+                socioambiental
+              </p>
+            </div>
+          </div>
         </section>
+
+        <br />
+        <h3>Formação</h3>
+        <ul>
+          <li>Pós-graduação em Ciência de Dados</li>
+          <li>Graduação em Engenharia Florestal</li>
+          <li>Tecnólogo em Análise e Desenvolvimento de Sistemas</li>
+          <li>Certificado Google "Data Analytics"</li>
+        </ul>
+
+        <br />
+      </aside>
+
+      <section>
+        <!-- <h2 style="color: var(--accent-color); margin-bottom: 2rem;">Serviços</h2> -->
+
+        <section class="cards">
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >code</span
+              >
+              Desenvolvimento de Software
+            </h3>
+            <p>
+              Soluções personalizadas que simplificam a gestão de projetos,
+              processos administrativos e metodologias de monitoramento.
+              Ferramentas flexíveis e feitas sob medida, rodando localmente ou na
+              nuvem.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >database</span
+              >
+              Gestão de Dados
+            </h3>
+            <p>
+              Sistemas inteligentes para governança de dados: coleta,
+              organização, armazenamento, análise, visualização, segurança e
+              privacidade. Dados institicionais armazenados em infraestrutura
+              segura e permanente, apoiando o monitoramento e a tomada de
+              decisões.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >volunteer_activism</span
+              >
+              Ferramentas para filantropia
+            </h3>
+            <p>
+              Sistemas de automação para fundos de filantropia. Plataformas para
+              o processo seletivo (recepção de propostas, avaliações,
+              sistematização) e para a gestão dos projetos aprovados
+              (acompanhamento técnico/financeiro, relatórios e prestação de
+              contas).
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >emoji_food_beverage</span
+              >
+              Gestão administrativa
+            </h3>
+            <p>
+              Sistemas internos integrados para controle financeiro, gestão de
+              RH, solicitações de viagem, relatórios, prestação de contas e
+              automação de geração de documentos personalizados (contratos,
+              recibos). Deixe as tarefas repetitivas com o Robô e ganhe
+              eficiência no seu ADM.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >dashboard</span
+              >
+              Painéis gerenciais
+            </h3>
+            <p>
+              Visualização em tempo real de dados estratégicos por meio de
+              dashboards personalizados e interativos. Consulte métricas,
+              indicadores, execução financeira, cronograma de contratos, e
+              obtenha insights valiosos para a tomada de decisão.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >network_node</span
+              >
+              Rastreabilidade com blockchain
+            </h3>
+            <p>
+              Acompanhe cada etapa da cadeia produtiva com a confiabilidade do
+              blockchain. Apps para registro do trânsito e para consulta das
+              informações registradas. Ideal para empreendimentos que desejam
+              comprovar a origem dos produtos e oferecer ferramentas de
+              rastreabilidade.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >chart_data</span
+              >
+              Sistematização e Análise de Dados
+            </h3>
+            <p>
+              Organização e estruturação de dados complexos, automação de
+              análise/relatórios padronizados, tabulação de pesquisas, bancos de
+              dados, monitoramento de indicadores e visualização de dados em
+              gráficos e mapas. Transforme os dados em informações valiosas para
+              sua organização.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >rss_feed</span
+              >
+              Clipping de Notícias
+            </h3>
+            <p>
+              Plataforma online para reunir em um só lugar as menções e matérias
+              na mídia sobre os temas de interesse da organização. Ferramenta de
+              triagem, painel para consulta com filtros e gráficos. Acompanhe
+              tendências, oportunidades e a repercussão de suas atividades na
+              mídia.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >gavel</span
+              >
+              Monitoramento Legislativo
+            </h3>
+            <p>
+              Entregue diariamente para sua equipe de advocacy as atualizações
+              legislativas de matérias de interesse na Câmara e no Senado.
+              Cadastre os PLs que deseja acompanhar, e pronto. As movimentações
+              chegarão todos os dias por e-mail.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >map</span
+              >
+              Criação de Mapas
+            </h3>
+            <p>
+              Elaboração de mapas temáticos estáticos ou interativos.
+              Visualização de áreas de atuação, distribuição de carteiras de
+              projetos, peças para relatórios, antes / depois, linhas temporais,
+              etc.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >description</span
+              >
+              Elaboração de projetos
+            </h3>
+            <p>
+              Apoio na elaboração de projetos na área de tecnologia, auxiliando
+              organizações na captação de recursos em editais e programas de
+              financiamento voltados pra essa temática.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span
+                class="material-symbols-outlined"
+                style="vertical-align: bottom"
+                >description</span
+              >
+              Gestão de ativos digitais
+            </h3>
+            <p>
+              Gestão eficiente de coleção de mídia (fotos, vídeos e documentos)
+              com armazenamento em banco de dados, classificação com tags e
+              busca avançada. Serviços de instalação, treinamento, assessoria,
+              monitoramento de carga e backup.
+            </p>
+          </div>
+        </section>
+      </section>
     </main>
 
-    <br>
-    <br>
-
+    <br />
+    <br />
 
     <section class="calltoaction">
-        <h2 style="display: inline-flex; align-items: center; gap: 10px; color: #ffffff; justify-content: center; font-weight: 700; font-size: 1.8rem; margin: 10px 0;">
-            <span class="material-symbols-outlined" style="font-size: 32px;">mail</span>Entre em contato
-        </h2>
+      <h2
+        style="
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          color: #ffffff;
+          justify-content: center;
+          font-weight: 700;
+          font-size: 1.8rem;
+          margin: 10px 0;
+        "
+      >
+        <span class="material-symbols-outlined" style="font-size: 32px"
+          >mail</span
+        >Entre em contato
+      </h2>
 
-        <p style="color: #e0e0e0; font-size: 1.5rem; margin-top: 0.5rem;">
-            
-            <a href="mailto:renato.eco@gmail.com" style="color: #00838F; text-decoration: underline;">
-                hrobo@gmail.com
-            </a>
-        </p>
+      <p style="color: #e0e0e0; font-size: 1.5rem; margin-top: 0.5rem">
+        <a
+          href="mailto:renato.eco@gmail.com"
+          style="color: #00838f; text-decoration: underline"
+        >
+          renato.eco@gmail.com
+        </a>
+      </p>
     </section>
 
     <footer id="footer">
-        <p><b>Humaníssimo Robô</b> é uma marca da empresa Sociobiodiversa Estratégias e Serviços em Sustentabilidade</p>
-        <p>CNPJ 18.465.465/0001-83</p>
+      <p>
+        <strong>Humaníssimo Robô</strong> é uma marca da empresa Sociobiodiversa
+        Estratégias e Serviços em Sustentabilidade
+      </p>
+      <p>CNPJ 18.465.465/0001-83</p>
     </footer>
 
     <script>
-        // Faz o botão rolar suavemente até o footer
-        document.getElementById('scrollButton').addEventListener('click', () => {
-            document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
-        });
+      // Faz o botão rolar suavemente até o footer
+      document.getElementById("scrollButton").addEventListener("click", () => {
+        document
+          .getElementById("footer")
+          .scrollIntoView({ behavior: "smooth" });
+      });
     </script>
-</body>
+  </body>
 </html>
