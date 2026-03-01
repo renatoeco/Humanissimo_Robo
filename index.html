@@ -7,6 +7,8 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
@@ -29,13 +31,7 @@
     </script>
 
     <style>
-      /* :root {
-            --dark-bg: #2e3a47;       
-            --card-bg: #3a4758;       
-            --text-light: #e0e0e0;    
-            --text-lighter: #ffffff;  
-            --accent-color: #00838F;  
-        } */
+
 
       :root {
         --dark-bg: linear-gradient(135deg, #1f2937 0%, #111827 100%);
@@ -103,6 +99,12 @@
         backdrop-filter: none;
       }
 
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
       header img {
         max-width: 130px;
         margin-right: 2rem;
@@ -112,6 +114,7 @@
       .header-text {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
       }
 
       header h1 {
@@ -128,8 +131,12 @@
       }
 
       .header-cta {
-        margin-left: auto;
+        display: flex;
+        flex-direction: column;   /* coloca bandeiras acima do botão */
+        align-items: end;      /* centraliza horizontalmente */
+        gap: 12px;                /* espaço entre bandeiras e botão */
       }
+
 
       ul li {
         margin-bottom: 0.8rem;
@@ -146,6 +153,7 @@
         color: #fff;
         padding: 0.6rem 1.2rem;
         margin-left: 2.5rem;
+        margin-bottom: 10px;
         border-radius: 8px;
         font-weight: 600;
         font-size: 1.2rem;
@@ -249,6 +257,35 @@
         padding: 2rem 1rem;
       }
 
+
+      .language-switch {
+        display: flex;
+        gap: 12px;
+        margin-left: 20px;
+      }
+
+      .language-switch .fi {
+        font-size: 22px;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .language-switch .fi:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+
+      .language-switch img {
+        width: 28px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .language-switch img:hover {
+        transform: scale(1.1);
+      }
+
       /* RESPONSIVIDADE */
       @media (max-width: 768px) {
         header {
@@ -302,30 +339,48 @@
   </head>
 
   <body>
-    <header>
-      <img src="images/logo_human_robo.png" alt="Logotipo Humaníssimo Robô" />
 
-      <div class="header-text">
-        <h1 style="font-size: 2.7rem">Humaníssimo Robô</h1>
-        <p>Tecnologia a serviço de quem transforma o mundo</p>
+    <header>
+
+      <div class="header-left">
+        <img src="images/logo_human_robo.png" alt="Logotipo Humaníssimo Robô" />
+
+        <div class="header-text">
+          <h1 lang_translate="titulo" style="font-size: 2.7rem">
+            Humaníssimo Robô
+          </h1>
+          <p lang_translate="slogan">
+            Tecnologia a serviço de quem transforma o mundo
+          </p>
+        </div>
       </div>
+
 
       <div class="header-cta">
-        <button class="cta-button" id="scrollButton">
-          <span class="material-symbols-outlined" style="font-size: 20px"
-            >mail</span
-          >
+
+        <!-- Botão primeiro -->
+        <button lang_translate="contato" class="cta-button" id="scrollButton">
+          <span class="material-symbols-outlined">mail</span>
           Entre em contato
         </button>
+
+        <!-- Bandeiras abaixo -->
+        <div class="language-switch">
+          <span class="fi fi-br" onclick="setLanguage('pt')"></span>
+          <span class="fi fi-gb" onclick="setLanguage('en')"></span>
+          <span class="fi fi-es" onclick="setLanguage('es')"></span>
+        </div>
+
       </div>
+
+
     </header>
+
 
     <section class="descricao-empresa">
       <div>
-        <h2>
-          <span class="destaque">Desenvolvimento de Software</span> e
-          <span class="destaque">Gestão de Dados</span> para o
-          <span class="destaque">Terceiro Setor</span>
+        <h2 lang_translate="frase_forca">
+          Desenvolvimento de Software e Gestão de Dados para o Terceiro Setor
         </h2>
 
         <br />
@@ -334,25 +389,37 @@
 
     <main>
       <aside>
-        <h2>Tecnologia e transformação</h2>
-        <p>
+
+        <h2 lang_translate="tecnologia_transformacao_titulo">
+          Tecnologia e transformação
+        </h2>
+
+        <p lang_translate="tecnologia_transformacao_texto">
           A missão da <strong>Humaníssimo Robô</strong> é desenvolver soluções
           que possibilitem às instituições atuarem com maior eficiência,
           transparência e de forma colaborativa em prol da transformação social,
           ambiental e econômica.
         </p>
+
         <br />
 
-        <h2>Ferramentas de impacto</h2>
-        <p>
+        <h2 lang_translate="ferramentas_impacto_titulo">
+          Ferramentas de impacto
+        </h2>
+
+        <p lang_translate="ferramentas_impacto_texto">
           Tecnologia orientada a dados para impulsionar causas e fortalecer
           estratégias. Soluções digitais que estruturam informações, geram
           conhecimento e apoiam a tomada de decisões.
         </p>
 
         <br />
-        <h2>Foco no Terceiro Setor</h2>
-        <p>
+
+        <h2 lang_translate="foco_terceiro_setor_titulo">
+          Foco no Terceiro Setor
+        </h2>
+
+        <p lang_translate="foco_terceiro_setor_texto">
           Trabalho voltado ao assessoramento de organizações da sociedade civil
           que estão em processo de transição digital ou que desejam informatizar
           operações, como ONGs, fundações, associações, sindicatos e movimentos
@@ -360,10 +427,14 @@
         </p>
 
         <br />
-        <h2>Desenvolvedor</h2>
+
+        <h2 lang_translate="desenvolvedor_titulo">
+          Desenvolvedor
+        </h2>
 
         <section class="sobre-desenvolvedor">
           <div class="sobre-conteudo">
+
             <div class="col-esquerda">
               <img
                 class="avatar"
@@ -371,42 +442,67 @@
                 alt="Fotografia do desenvolvedor"
               />
             </div>
+
             <div class="col-direita">
-              <p><strong>Renato Araujo</strong></p>
               <p>
+                <strong lang_translate="desenvolvedor_nome">
+                  Renato Araujo
+                </strong>
+              </p>
+
+              <p lang_translate="desenvolvedor_descricao">
                 Analista de Dados com mais de 20 anos de experiência no campo
                 socioambiental
               </p>
             </div>
+
           </div>
         </section>
 
         <br />
-        <h3>Formação</h3>
+
+        <h3 lang_translate="formacao_titulo">
+          Formação
+        </h3>
+
         <ul>
-          <li>Pós-graduação em Ciência de Dados</li>
-          <li>Graduação em Engenharia Florestal</li>
-          <li>Tecnólogo em Análise e Desenvolvimento de Sistemas</li>
-          <li>Certificado Google "Data Analytics"</li>
+          <li lang_translate="formacao_pos">
+            Pós-graduação em Ciência de Dados
+          </li>
+
+          <li lang_translate="formacao_graduacao">
+            Graduação em Engenharia Florestal
+          </li>
+
+          <li lang_translate="formacao_tecnologo">
+            Tecnólogo em Análise e Desenvolvimento de Sistemas
+          </li>
+
+          <li lang_translate="formacao_certificado">
+            Certificado Google "Data Analytics"
+          </li>
         </ul>
 
         <br />
+
       </aside>
 
+
+
       <section>
-        <!-- <h2 style="color: var(--accent-color); margin-bottom: 2rem;">Serviços</h2> -->
 
         <section class="cards">
+
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >code</span
-              >
-              Desenvolvimento de Software
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                code
+              </span>
+              <span lang_translate="servico_software_titulo">
+                Desenvolvimento de Software
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_software_texto">
               Soluções personalizadas que simplificam a gestão de projetos,
               processos administrativos e metodologias de monitoramento.
               Ferramentas flexíveis e feitas sob medida, rodando localmente ou
@@ -416,14 +512,14 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >database</span
-              >
-              Gestão de Dados
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                database
+              </span>
+              <span lang_translate="servico_dados_titulo">
+                Gestão de Dados
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_dados_texto">
               Sistemas inteligentes para governança de dados: coleta,
               organização, armazenamento, análise, visualização e interação.
               Dados institucionais armazenados de forma segura e duradoura.
@@ -432,14 +528,14 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >volunteer_activism</span
-              >
-              Ferramentas para filantropia
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                volunteer_activism
+              </span>
+              <span lang_translate="servico_filantropia_titulo">
+                Ferramentas para filantropia
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_filantropia_texto">
               Sistemas de automação para fundos de filantropia. Plataformas para
               seleção de propostas (recepção, avaliações, sistematização) e para
               a gestão dos projetos (acompanhamento técnico/financeiro,
@@ -449,14 +545,14 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >emoji_food_beverage</span
-              >
-              Gestão administrativa
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                emoji_food_beverage
+              </span>
+              <span lang_translate="servico_administrativo_titulo">
+                Gestão administrativa
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_administrativo_texto">
               Sistemas internos integrados para controle financeiro, gestão de
               RH, solicitações de viagem, relatórios, prestação de contas e
               documentos personalizados (contratos, recibos). Automatize as
@@ -467,14 +563,14 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >dashboard</span
-              >
-              Painéis gerenciais
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                dashboard
+              </span>
+              <span lang_translate="servico_paineis_titulo">
+                Painéis gerenciais
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_paineis_texto">
               Visualização em tempo real de dados estratégicos por meio de
               dashboards personalizados e interativos. Consulte métricas,
               indicadores, execução financeira e cronogramas de contratos, e
@@ -484,14 +580,14 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >network_node</span
-              >
-              Rastreabilidade com blockchain
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                network_node
+              </span>
+              <span lang_translate="servico_blockchain_titulo">
+                Rastreabilidade com blockchain
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_blockchain_texto">
               Acompanhe cada etapa da cadeia produtiva com a confiabilidade do
               blockchain. Apps para registro do trânsito de produtos e para
               auditoria da cadeia. Ideal para empreendimentos que desejam
@@ -501,14 +597,14 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >chart_data</span
-              >
-              Análise de Dados
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                chart_data
+              </span>
+              <span lang_translate="servico_analise_titulo">
+                Análise de Dados
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_analise_texto">
               Organização e estruturação de dados complexos, automação de
               relatórios, tabulação de pesquisas, criação e manutenção de bancos
               de dados, monitoramento de indicadores e visualização de dados em
@@ -519,14 +615,14 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >rss_feed</span
-              >
-              Clipping de Notícias
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                rss_feed
+              </span>
+              <span lang_translate="servico_clipping_titulo">
+                Clipping de Notícias
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_clipping_texto">
               Plataforma online para reunir em um só lugar as menções e matérias
               na mídia sobre os temas de interesse da organização. Ferramenta de
               triagem e painel para consulta com filtros e gráficos. Acompanhe
@@ -537,14 +633,14 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >gavel</span
-              >
-              Monitoramento Legislativo
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                gavel
+              </span>
+              <span lang_translate="servico_legislativo_titulo">
+                Monitoramento Legislativo
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_legislativo_texto">
               Monitoramento legislativo contínuo das matérias de interesse da sua
               organização. Cadastre os Projetos de Lei e receba notificações por
               e-mail sempre que houver movimentações.
@@ -553,31 +649,31 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >map</span
-              >
-              Criação de Mapas
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                map
+              </span>
+              <span lang_translate="servico_mapas_titulo">
+                Criação de Mapas
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_mapas_texto">
               Elaboração de mapas temáticos estáticos ou interativos.
               Visualização de áreas de atuação, distribuição de carteiras de
-              projetos, peças para relatórios, antes / depois, linhas temporais,
+              projetos, peças para relatórios, antes/depois, linhas temporais,
               etc.
             </p>
           </div>
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >description</span
-              >
-              Elaboração de projetos
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                description
+              </span>
+              <span lang_translate="servico_projetos_titulo">
+                Elaboração de projetos
+              </span>
             </h3>
-            <p>
+            <p lang_translate="servico_projetos_texto">
               Apoio na elaboração de projetos na área de tecnologia, auxiliando
               organizações na captação de recursos em editais e programas de
               financiamento.
@@ -586,21 +682,23 @@
 
           <div class="card">
             <h3>
-              <span
-                class="material-symbols-outlined"
-                style="vertical-align: bottom"
-                >description</span
-              >
-              Gestão de ativos digitais
+              <span class="material-symbols-outlined" style="vertical-align: bottom">
+                description
+              </span>
+              <span lang_translate="servico_ativos_digitais_titulo">
+                Gestão de ativos digitais
+              </span>
             </h3>
-            <p>
-              Gestão de coleção de mídia (fotos, vídeos e documentos)
-              com armazenamento em banco de dados, classificação com tags e
-              busca avançada. Serviços de instalação, treinamento, assessoria,
+            <p lang_translate="servico_ativos_digitais_texto">
+              Gestão de coleção de mídia (fotos, vídeos e documentos) com
+              armazenamento em banco de dados, classificação com tags e busca
+              avançada. Serviços de instalação, treinamento, assessoria,
               monitoramento de carga e backup.
             </p>
           </div>
+
         </section>
+
       </section>
     </main>
 
@@ -608,6 +706,7 @@
     <br />
 
     <section class="calltoaction">
+
       <h2
         style="
           display: inline-flex;
@@ -620,9 +719,13 @@
           margin: 10px 0;
         "
       >
-        <span class="material-symbols-outlined" style="font-size: 32px"
-          >mail</span
-        >Entre em contato
+        <span class="material-symbols-outlined" style="font-size: 32px">
+          mail
+        </span>
+
+        <span lang_translate="cta_titulo">
+          Entre em contato
+        </span>
       </h2>
 
       <p style="color: #e0e0e0; font-size: 1.5rem; margin-top: 0.5rem">
@@ -633,23 +736,327 @@
           renato.eco@gmail.com
         </a>
       </p>
+
     </section>
 
+
     <footer id="footer">
+
       <p>
-        <strong>Humaníssimo Robô</strong> é uma marca da empresa Sociobiodiversa
-        Estratégias e Serviços em Sustentabilidade
+        <strong lang_translate="marca_nome">
+          Humaníssimo Robô
+        </strong>
+        <span lang_translate="marca_descricao">
+          é uma marca da empresa Sociobiodiversa Estratégias e Serviços em Sustentabilidade
+        </span>
       </p>
-      <p>CNPJ 18.465.465/0001-83</p>
+
+      <p lang_translate="marca_cnpj">
+        CNPJ 18.465.465/0001-83
+      </p>
+
     </footer>
 
+
     <script>
-      // Faz o botão rolar suavemente até o footer
-      document.getElementById("scrollButton").addEventListener("click", () => {
-        document
-          .getElementById("footer")
-          .scrollIntoView({ behavior: "smooth" });
+
+      // =============================
+      // BOTÃO SCROLL SUAVE
+      // =============================
+
+      const scrollBtn = document.getElementById("scrollButton");
+
+      if (scrollBtn) {
+        scrollBtn.addEventListener("click", () => {
+          document
+            .getElementById("footer")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      }
+
+      // =============================
+      // TRADUÇÕES
+      // =============================
+
+      const traducoes = {
+        pt: {
+          titulo: "Humaníssimo Robô",
+          slogan: "Tecnologia a serviço de quem transforma o mundo",
+          contato: "Entre em contato",
+          frase_forca: "Desenvolvimento de Software e Gestão de Dados para o Terceiro Setor",
+          tecnologia_transformacao_titulo: "Tecnologia e transformação",
+          tecnologia_transformacao_texto: "A missão da Humaníssimo Robô é desenvolver soluções que possibilitem às instituições atuarem com maior eficiência, transparência e de forma colaborativa em prol da transformação social, ambiental e econômica.",
+
+          ferramentas_impacto_titulo: "Ferramentas de impacto",
+          ferramentas_impacto_texto: "Tecnologia orientada a dados para impulsionar causas e fortalecer estratégias. Soluções digitais que estruturam informações, geram conhecimento e apoiam a tomada de decisões.",
+
+          foco_terceiro_setor_titulo: "Foco no Terceiro Setor",
+          foco_terceiro_setor_texto: "Trabalho voltado ao assessoramento de organizações da sociedade civil que estão em processo de transição digital ou que desejam informatizar operações, como ONGs, fundações, associações, sindicatos e movimentos sociais.",
+
+          desenvolvedor_titulo: "Desenvolvedor",
+
+          desenvolvedor_nome: "Renato Araujo",
+          desenvolvedor_descricao: "Analista de Dados com mais de 20 anos de experiência no campo socioambiental",
+
+          formacao_titulo: "Formação",
+
+          formacao_pos: "Pós-graduação em Ciência de Dados",
+          formacao_graduacao: "Graduação em Engenharia Florestal",
+          formacao_tecnologo: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+          formacao_certificado: "Certificado Google \"Data Analytics\"",
+          
+
+          servico_software_titulo: "Desenvolvimento de Software",
+          servico_software_texto: "Soluções personalizadas que simplificam a gestão de projetos, processos administrativos e metodologias de monitoramento. Ferramentas flexíveis e feitas sob medida, rodando localmente ou na nuvem.",
+
+          servico_dados_titulo: "Gestão de Dados",
+          servico_dados_texto: "Sistemas inteligentes para governança de dados: coleta, organização, armazenamento, análise, visualização e interação. Dados institucionais armazenados de forma segura e duradoura.",
+
+          servico_filantropia_titulo: "Ferramentas para filantropia",
+          servico_filantropia_texto: "Sistemas de automação para fundos de filantropia. Plataformas para seleção de propostas (recepção, avaliações, sistematização) e para a gestão dos projetos (acompanhamento técnico/financeiro, relatórios e prestação de contas).",
+
+          servico_administrativo_titulo: "Gestão administrativa",
+          servico_administrativo_texto: "Sistemas internos integrados para controle financeiro, gestão de RH, solicitações de viagem, relatórios, prestação de contas e documentos personalizados (contratos, recibos). Automatize as rotinas repetitivas e aumente a eficiência da sua gestão administrativa.",
+
+          servico_paineis_titulo: "Painéis gerenciais",
+          servico_paineis_texto: "Visualização em tempo real de dados estratégicos por meio de dashboards personalizados e interativos. Consulte métricas, indicadores, execução financeira e cronogramas de contratos, e obtenha insights valiosos para a gestão estratégica.",
+
+          servico_blockchain_titulo: "Rastreabilidade com blockchain",
+          servico_blockchain_texto: "Acompanhe cada etapa da cadeia produtiva com a confiabilidade do blockchain. Apps para registro do trânsito de produtos e para auditoria da cadeia. Ideal para empreendimentos que desejam comprovar a origem dos produtos e oferecer rastreabilidade.",
+
+          servico_analise_titulo: "Análise de Dados",
+          servico_analise_texto: "Organização e estruturação de dados complexos, automação de relatórios, tabulação de pesquisas, criação e manutenção de bancos de dados, monitoramento de indicadores e visualização de dados em gráficos e mapas. Transforme os dados em informações valiosas para sua organização.",
+
+          servico_clipping_titulo: "Clipping de Notícias",
+          servico_clipping_texto: "Plataforma online para reunir em um só lugar as menções e matérias na mídia sobre os temas de interesse da organização. Ferramenta de triagem e painel para consulta com filtros e gráficos. Acompanhe tendências, oportunidades e a repercussão de suas atividades na mídia.",
+
+          servico_legislativo_titulo: "Monitoramento Legislativo",
+          servico_legislativo_texto: "Monitoramento legislativo contínuo das matérias de interesse da sua organização. Cadastre os Projetos de Lei e receba notificações por e-mail sempre que houver movimentações.",
+
+          servico_mapas_titulo: "Criação de Mapas",
+          servico_mapas_texto: "Elaboração de mapas temáticos estáticos ou interativos. Visualização de áreas de atuação, distribuição de carteiras de projetos, peças para relatórios, antes/depois, linhas temporais, etc.",
+
+          servico_projetos_titulo: "Elaboração de projetos",
+          servico_projetos_texto: "Apoio na elaboração de projetos na área de tecnologia, auxiliando organizações na captação de recursos em editais e programas de financiamento.",
+
+          servico_ativos_digitais_titulo: "Gestão de ativos digitais",
+          servico_ativos_digitais_texto: "Gestão de coleção de mídia (fotos, vídeos e documentos) com armazenamento em banco de dados, classificação com tags e busca avançada. Serviços de instalação, treinamento, assessoria, monitoramento de carga e backup.",
+
+
+          cta_titulo: "Entre em contato",
+
+          marca_nome: "Humaníssimo Robô",
+          marca_descricao: "é uma marca da empresa Sociobiodiversa Estratégias e Serviços em Sustentabilidade",
+          marca_cnpj: "CNPJ 18.465.465/0001-83"          
+
+
+
+
+        },
+        en: {
+          titulo: "Humanistic Robot",
+          slogan: "Technology serving those who transform the world",
+          contato: "Get in touch",
+          frase_forca: "Software Development and Data Management for Nonprofit Organizations",
+          
+          tecnologia_transformacao_titulo: "Technology and Transformation",
+          tecnologia_transformacao_texto: "Humanistic Robot's mission is to develop solutions that enable institutions to operate with greater efficiency, transparency, and collaboration in pursuit of social, environmental, and economic transformation.",
+
+          ferramentas_impacto_titulo: "Impact Tools",
+          ferramentas_impacto_texto: "Data-driven technology to strengthen causes and strategies. Digital solutions that structure information, generate knowledge, and support informed decision-making.",
+
+          foco_terceiro_setor_titulo: "Focus on the Nonprofit Sector",
+          foco_terceiro_setor_texto: "Work dedicated to supporting civil society organizations undergoing digital transformation or seeking to modernize their operations, such as NGOs, foundations, associations, unions, and social movements.",
+
+          desenvolvedor_titulo: "Developer",
+
+          desenvolvedor_nome: "Renato Araujo",
+          desenvolvedor_descricao: "Data Analyst with over 20 years of experience in the socio-environmental field",
+
+          formacao_titulo: "Education",
+
+          formacao_pos: "Postgraduate Degree in Data Science",
+          formacao_graduacao: "Bachelor's Degree in Forest Engineering",
+          formacao_tecnologo: "Associate Degree in Systems Analysis and Development",
+          formacao_certificado: "Google Data Analytics Certificate",
+
+
+          servico_software_titulo: "Software Development",
+          servico_software_texto: "Custom solutions that simplify project management, administrative processes, and monitoring methodologies. Flexible, tailor-made tools running locally or in the cloud.",
+
+          servico_dados_titulo: "Data Management",
+          servico_dados_texto: "Intelligent systems for data governance: collection, organization, storage, analysis, visualization, and interaction. Institutional data stored securely and reliably.",
+
+          servico_filantropia_titulo: "Philanthropy Tools",
+          servico_filantropia_texto: "Automation systems for philanthropic funds. Platforms for proposal selection (submission, evaluation, systematization) and project management (technical and financial monitoring, reporting, and accountability).",
+
+          servico_administrativo_titulo: "Administrative Management",
+          servico_administrativo_texto: "Integrated internal systems for financial control, HR management, travel requests, reporting, accountability, and customized documents (contracts, receipts). Automate repetitive tasks and increase administrative efficiency.",
+
+          servico_paineis_titulo: "Management Dashboards",
+          servico_paineis_texto: "Real-time visualization of strategic data through customized and interactive dashboards. Monitor metrics, indicators, financial execution, and contract timelines to gain valuable insights for strategic management.",
+
+          servico_blockchain_titulo: "Blockchain Traceability",
+          servico_blockchain_texto: "Track every stage of the supply chain with the reliability of blockchain technology. Applications for product tracking and supply chain auditing. Ideal for organizations that need to verify product origin and ensure traceability.",
+
+          servico_analise_titulo: "Data Analysis",
+          servico_analise_texto: "Organization and structuring of complex data, automated reporting, survey tabulation, database creation and maintenance, indicator monitoring, and data visualization through charts and maps. Transform data into valuable insights for your organization.",
+
+          servico_clipping_titulo: "Media Monitoring",
+          servico_clipping_texto: "Online platform to centralize media mentions and coverage related to your organization's areas of interest. Includes filtering tools and visual dashboards. Track trends, opportunities, and the public impact of your activities.",
+
+          servico_legislativo_titulo: "Legislative Monitoring",
+          servico_legislativo_texto: "Continuous monitoring of legislative matters relevant to your organization. Register bills and receive email notifications whenever updates occur.",
+
+          servico_mapas_titulo: "Map Creation",
+          servico_mapas_texto: "Development of static or interactive thematic maps. Visualize areas of operation, project portfolios, report visuals, before-and-after comparisons, timelines, and more.",
+
+          servico_projetos_titulo: "Project Development",
+          servico_projetos_texto: "Support in developing technology-related projects, assisting organizations in securing funding through grants and financing programs.",
+
+          servico_ativos_digitais_titulo: "Digital Asset Management",
+          servico_ativos_digitais_texto: "Management of media collections (photos, videos, and documents) with database storage, tagging classification, and advanced search. Includes installation, training, consulting, upload monitoring, and backup services.",
+
+
+
+          cta_titulo: "Get in Touch",
+
+          marca_nome: "Humanistic Robot",
+          marca_descricao: "is a brand of Sociobiodiersa Estratégias e Serviços em Sustentabilidade",
+          marca_cnpj: "Brazilian CNPJ 18.465.465/0001-83"
+
+
+
+
+
+        },
+        es: {
+          titulo: "Humanísimo Robot",
+          slogan: "Tecnología al servicio de quienes transforman el mundo",
+          contato: "Contáctanos",
+          frase_forca: "Desarrollo de Software y Gestión de Datos para Organizaciones sin Fines de Lucro",
+
+          tecnologia_transformacao_titulo: "Tecnología y Transformación",
+          tecnologia_transformacao_texto: "La misión de Humanísimo Robot es desarrollar soluciones que permitan a las instituciones actuar con mayor eficiencia, transparencia y de manera colaborativa en favor de la transformación social, ambiental y económica.",
+
+          ferramentas_impacto_titulo: "Herramientas de Impacto",
+          ferramentas_impacto_texto: "Tecnología orientada a datos para fortalecer causas y estrategias. Soluciones digitales que estructuran información, generan conocimiento y apoyan la toma de decisiones.",
+
+          foco_terceiro_setor_titulo: "Enfoque en las Organizaciones sin Fines de Lucro",
+          foco_terceiro_setor_texto: "Trabajo orientado al acompañamiento de organizaciones de la sociedad civil que se encuentran en proceso de transformación digital o que desean modernizar sus operaciones, como ONGs, fundaciones, asociaciones, sindicatos y movimientos sociales.",
+
+          desenvolvedor_titulo: "Desarrollador",
+
+          desenvolvedor_nome: "Renato Araujo",
+          desenvolvedor_descricao: "Analista de Datos con más de 20 años de experiencia en el ámbito socioambiental",
+
+          formacao_titulo: "Formación",
+
+          formacao_pos: "Posgrado en Ciencia de Datos",
+          formacao_graduacao: "Licenciatura en Ingeniería Forestal",
+          formacao_tecnologo: "Tecnólogo en Análisis y Desarrollo de Sistemas",
+          formacao_certificado: "Certificación de Google \"Data Analytics\"",
+
+
+          servico_software_titulo: "Desarrollo de Software",
+          servico_software_texto: "Soluciones personalizadas que simplifican la gestión de proyectos, procesos administrativos y metodologías de monitoreo. Herramientas flexibles y a medida, que funcionan localmente o en la nube.",
+
+          servico_dados_titulo: "Gestión de Datos",
+          servico_dados_texto: "Sistemas inteligentes para la gobernanza de datos: recopilación, organización, almacenamiento, análisis, visualización e interacción. Datos institucionales almacenados de forma segura y confiable.",
+
+          servico_filantropia_titulo: "Herramientas para la Filantropía",
+          servico_filantropia_texto: "Sistemas de automatización para fondos de filantropía. Plataformas para la selección de propuestas (recepción, evaluación y sistematización) y para la gestión de proyectos (seguimiento técnico y financiero, informes y rendición de cuentas).",
+
+          servico_administrativo_titulo: "Gestión Administrativa",
+          servico_administrativo_texto: "Sistemas internos integrados para control financiero, gestión de RR. HH., solicitudes de viaje, informes, rendición de cuentas y documentos personalizados (contratos, recibos). Automatice tareas repetitivas y aumente la eficiencia administrativa.",
+
+          servico_paineis_titulo: "Paneles de Gestión",
+          servico_paineis_texto: "Visualización en tiempo real de datos estratégicos mediante paneles personalizados e interactivos. Consulte métricas, indicadores, ejecución financiera y cronogramas de contratos para obtener información clave para la gestión estratégica.",
+
+          servico_blockchain_titulo: "Trazabilidad con Blockchain",
+          servico_blockchain_texto: "Supervise cada etapa de la cadena productiva con la confiabilidad de la tecnología blockchain. Aplicaciones para el registro del tránsito de productos y la auditoría de la cadena. Ideal para organizaciones que necesitan comprobar el origen de sus productos y garantizar la trazabilidad.",
+
+          servico_analise_titulo: "Análisis de Datos",
+          servico_analise_texto: "Organización y estructuración de datos complejos, automatización de informes, tabulación de encuestas, creación y mantenimiento de bases de datos, monitoreo de indicadores y visualización de datos en gráficos y mapas. Transforme los datos en información valiosa para su organización.",
+
+          servico_clipping_titulo: "Monitoreo de Medios",
+          servico_clipping_texto: "Plataforma en línea para reunir en un solo lugar las menciones y publicaciones en medios sobre los temas de interés de la organización. Incluye herramientas de filtrado y paneles visuales. Acompañe tendencias, oportunidades y el impacto público de sus actividades.",
+
+          servico_legislativo_titulo: "Monitoreo Legislativo",
+          servico_legislativo_texto: "Monitoreo continuo de iniciativas legislativas de interés para su organización. Registre proyectos de ley y reciba notificaciones por correo electrónico cada vez que haya actualizaciones.",
+
+          servico_mapas_titulo: "Creación de Mapas",
+          servico_mapas_texto: "Elaboración de mapas temáticos estáticos o interactivos. Visualización de áreas de actuación, carteras de proyectos, piezas para informes, comparaciones antes/después, líneas de tiempo y más.",
+
+          servico_projetos_titulo: "Formulación de Proyectos",
+          servico_projetos_texto: "Apoyo en la formulación de proyectos en el área de tecnología, ayudando a organizaciones a obtener recursos a través de convocatorias y programas de financiamiento.",
+
+          servico_ativos_digitais_titulo: "Gestión de Activos Digitales",
+          servico_ativos_digitais_texto: "Gestión de colecciones de medios (fotos, videos y documentos) con almacenamiento en base de datos, clasificación mediante etiquetas y búsqueda avanzada. Incluye instalación, capacitación, asesoría, monitoreo de carga y servicios de respaldo.",
+
+
+          cta_titulo: "Contáctanos",
+
+          marca_nome: "Humanísimo Robot",
+          marca_descricao: "es una marca de Sociobiodiversa Estrategias y Servicios en Sostenibilidad",
+          marca_cnpj: "CNPJ 18.465.465/0001-83"
+
+
+
+
+
+        }
+      };
+
+      function setLanguage(lang) {
+
+        document.querySelectorAll("[lang_translate]").forEach(element => {
+          const key = element.getAttribute("lang_translate");
+
+          if (traducoes[lang] && traducoes[lang][key]) {
+            element.innerText = traducoes[lang][key];
+          }
+        });
+
+        localStorage.setItem("language", lang);
+        document.documentElement.lang = lang;
+
+        if (typeof gtag === "function") {
+
+          gtag('set', {
+            user_properties: {
+              preferred_language: lang
+            }
+          });
+
+          const virtualPath = "/" + lang;
+
+          gtag('event', 'page_view', {
+            page_title: document.title + " (" + lang + ")",
+            page_location: window.location.origin + virtualPath,
+            page_path: virtualPath,
+            language: lang
+          });
+
+          gtag('event', 'language_change', {
+            selected_language: lang
+          });
+        }
+      }
+
+
+      // =============================
+      // INICIALIZAÇÃO
+      // =============================
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("language") || "pt";
+        setLanguage(savedLang);
       });
+
     </script>
   </body>
 </html>
+
+
+
