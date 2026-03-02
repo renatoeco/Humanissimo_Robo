@@ -43,11 +43,6 @@
         --navbar-bg: rgba(31, 41, 55, 0.85);
       }
 
-      .destaque {
-        font-size: 1.2em;
-        font-weight: 600;
-      }
-
       .sobre-conteudo {
         display: grid;
         grid-template-columns: 1fr 3fr;
@@ -292,12 +287,23 @@
         header {
           display: flex;
           flex-direction: column;
-          align-items: center;
-          text-align: center;
-          padding-left: 20;
-          padding-right: 0;
+          align-items: flex-start; /* 🔥 muda de center para flex-start */
+          text-align: left;        /* 🔥 muda de center para left */
+          padding: 1.5rem 1.3rem;
         }
 
+        .header-left {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+
+        .header-text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start; /* mantém alinhado à esquerda */
+        }
 
 
         header img {
@@ -317,7 +323,11 @@
 
         header p {
           line-height: 1.2;
-          margin-inline: 1.4rem;
+        }
+
+        .header-cta {
+          align-items: flex-end;
+          width: 100%;
         }
 
         main {
@@ -369,9 +379,9 @@
 
     <section class="descricao-empresa">
       <div>
-        <h2 lang_translate="frase_forca">
+        <h1 lang_translate="frase_forca">
           Desenvolvimento de Software e Gestão de Dados para o Terceiro Setor
-        </h2>
+        </h1>
 
         <br />
       </div>
